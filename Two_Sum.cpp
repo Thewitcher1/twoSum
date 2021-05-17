@@ -31,9 +31,12 @@ int main(){
 
     vector<int>vec(9);
     iota(vec.begin(), vec.end(),0);
-    
+
     for(auto elm:vec){ cout << elm;}
     cout<< endl;
     print(twoSum(vec,9));
+
+    // another example
+    print(twoSum(vec,5));
     return 0;
 }
