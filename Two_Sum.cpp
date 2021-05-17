@@ -29,11 +29,11 @@ vector<int> twoSum(vector<int> nums, int target) {
 
 int main(){
 
-    vector<int>vec(10);
+    vector<int>vec(9);
     iota(vec.begin(), vec.end(),0);
     
     for(auto elm:vec){ cout << elm;}
     cout<< endl;
-    print(twoSum(vec,19));
+    print(twoSum(vec,9));
     return 0;
 }
