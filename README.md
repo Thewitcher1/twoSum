@@ -1,6 +1,6 @@
 # Code
 
-La fonction twoSum prend comme argument un tableau dynamique et target, elle doit renvoyer les indices des deux nombres tels qu'ils 
+La fonction twoSum prend comme argument un tableau dynamique et un target, elle doit renvoyer les indices des deux nombres tels qu'ils 
 s'additionnent à la cible, où index1 doit être inférieur à index2. Veuillez noter que les réponses que vous avez renvoyées (index1 et index2)
 ne sont pas basées sur zéro. 
 
