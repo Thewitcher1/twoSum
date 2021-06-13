@@ -113,9 +113,49 @@ having Max(Age*3 + 2) >7;                                having fonction(opérat
 select* from entrep order by Nom ASC;  ----------------> opérateur order by (Asc ou DESC) 
 
 select Nom n1, Prenom p1 from entrep;  ----------------> Cration d'un Alias pour faciliter la compréhension et l'utilistion des # champs.
+    
+select * from table_1
+union all                           -------------------> Union de deux tableau 
+select * from table_2;
+
+select * from table_1
+intersect                          --------------------> Intersection de deux tableau  
+select * from table_2;
+
+select * from table_1
+Except                           ---------------------> selectionner tous les colonnes de table_1 à l'exception de table_2
+select * from table_2;
+
+update entrep
+set Nom = 'Mourad',             ---------------------> update: mise à jour d'un tableau 
+	Tel = '######'
+where id = 1;
+
+|----------|
+| Jointure |
+|----------|
+    
+Inner Join:
+
+select métier, expertise, Nom, Adresse       ---> inner join appelé également EQouiJoin: Cette commande retourne les enregistrements 
+from entrep (table_nom)                                     lorsqu’il y a au moins une ligne dans chaque colonne qui correspond à la condition.       
+inner join soc(table_nom) on entrep.id = soc.id;
+
+
+cross join:
+
+select métier,Nom,expertise,Adresse
+from soc                                   ------> cross join : retourne le produit cartésien de tableau sql
+cross join entrep;
+
 
 
     
+    
+    
+
+
+
 select * from soc;
 select * from entrep;
 
