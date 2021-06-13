@@ -149,7 +149,33 @@ from soc                                   ------> cross join : retourne le prod
 cross join entrep;
 
 
+left join:
 
+SELECT *                                          ----> left join(outer left join): une jointure à gauche Cela permet de lister tous les résultats de la table 
+FROM utilisateur(table_nom)                            de gauche (left = gauche) même s’il n’y a pas de correspondance dans la deuxième tables.
+LEFT JOIN commande(table_nom) ON utilisateur.id = commande.utilisateur_id
+
+
+Right join:
+
+ SELECT id, prenom, nom, utilisateur_id, date_achat, num_facture
+ FROM utilisateur(table_name)
+ RIGHT JOIN commande(table_name) ON utilisateur.id = commande.utilisateur_id
+
+---> Right join ou Right outer join: est un type de jointure entre 2 tables qui permet de retourner tous les enregistrements de la table de droite
+(right = droite) même s’il n’y a pas de correspondance avec la table de gauche. S’il y a un enregistrement de la table
+de droite qui ne trouve pas de correspondance dans la table de gauche, alors les colonnes de la table de gauche auront NULL pour valeur.
+
+	
+full join: (full outer join): permet de faire une jointure entre 2 tables. L’utilisation de cette commande permet de combiner les
+                     résultats des 2 tables, les associer entre eux grâce à une condition et remplir avec des valeurs NULL si la condition n’est pas respectée. 
+	
+select * from entrep                  -------> full join
+full join soc on entrep.id = soc.id;
+
+self join:
+	 un SELF JOIN correspond à une jointure d’une table avec elle-même. Ce type de requête n’est pas si commun mais très pratique dans le
+	 cas où une table lie des informations avec des enregistrements de la même table.
     
     
     
