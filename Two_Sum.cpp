@@ -50,11 +50,11 @@ La clé primaire est un index, chacune des tables ne peut contenir qu’une seul
 L’usage le plus fréquent consiste à créer une colonne numérique qui s’incrémente automatiquement à chaque enregistrement grâce à AUTO_INCREMENT.
     
     
-creation d une base de donnée:  create database Client:
+creation d'une base de donnée:  create database Client:
     
 create database client;
 
-create table soc (
+create table soc(
   ID int primary key identity,
   métier varchar(100) Not Null,
   pseudo varchar(50) Not null,
@@ -92,6 +92,25 @@ select métier from soc where id=1; --- selectionner la colonne demandée du nom
  select * from soc where expertise <11 and caractère='smile'; ---------- and et or with where 
  select métier from soc where id =1 or id =2 or id=5;          ---------- and et or with where 
  select métier from soc where id in(1,2,5);                    ---------- Opérateur in 
+ select métier from soc where id between 1 and 3;              ---------- Opérateur between 
+ 
+ select métier from soc where métier like '%+'or métier like '%#' or pseudo like 'r%';  -------SQL LIKE
+  1- %a --> toute chaine de caractére qui se termine par la lettre a 
+  2- a% --> toute chaine de caractére qui commence par la lettre a
+  3- %a% --> toute chaine de caractére qui contient la lettre a
+  4- a_c --> le sysmbole underscore remplace seulement un seul caractère contrairement au % qui remplace un succession de caractére 
+  
+     
+select * from soc where expertise is null;           -------------> Opérateur IS NULL / IS NOT NULL 
+select métier, Max(id) from soc group by métier;     -------------> Opérateur GROUP BY
+
+select métier, AVG(s.expertise *2 ) from soc as s group by métier;  ---> clause: group by 
+
+select Nom, sum(Age*3 + 2)                               select colonne1, fonction(opération à effectuer sur une colonne2)
+from entrep group by Nom with rollup                     from table group by colonne1 with rollup
+having Max(Age*3 + 2) >7;                                having fonction(opération à effectuer sur une colonne2)
+
+ 
 
 
 select * from soc;
