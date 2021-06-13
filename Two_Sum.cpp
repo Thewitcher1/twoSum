@@ -40,3 +40,26 @@ int main(){
     print(twoSum(vec,5));
     return 0;
 }
+
+---------------------------------SQL Command -------------------------------------------------------
+    
+    creation d'une base de donnée:  create database Client:
+    
+create database client;  -- creation d'une base de donnée
+
+create table entrep (     ----- déclaration de tableau 
+  ID int primary key identity,  
+  Nom varchar(20) Not Null,
+  Prenom varchar(20) Not null,
+  Age int,
+  Adresse varchar(20),
+  Tel varchar(20)
+);
+                                                  ---- remplissage de tableau client
+insert into entrep values ('Sahbi','Nebti', 50, 'France', '*******')
+insert into entrep values ('Sahbi1','Nebti1', 40, 'France1', '1*******')
+insert into entrep values ('Sahbi2','Nebti2', 30, 'France2', '2*******')
+insert into entrep values ('Sahbi3','Nebti3', 20, 'France3', '3*******')
+insert into entrep values ('Sahbi4','Nebti4', 10, 'France4', '4*******')
+
+delete from entrep where id =1;    -----supprimer toute une ligne de tableau client 
