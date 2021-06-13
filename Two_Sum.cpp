@@ -110,9 +110,12 @@ select Nom, sum(Age*3 + 2)                               select colonne1, foncti
 from entrep group by Nom with rollup                     from table group by colonne1 with rollup
 having Max(Age*3 + 2) >7;                                having fonction(opération à effectuer sur une colonne2)
 
- 
+select* from entrep order by Nom ASC;  ----------------> opérateur order by (Asc ou DESC) 
+
+select Nom n1, Prenom p1 from entrep;  ----------------> Cration d'un Alias pour faciliter la compréhension et l'utilistion des # champs.
 
 
+    
 select * from soc;
 select * from entrep;
 
